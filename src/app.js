@@ -37,7 +37,7 @@ server.init(function(err, data) {
 		app.use(compression());
 		app.use(bodyParser.json());
 		app.use(bodyParser.urlencoded({ extended: true }));
-		app.use(expressValidator());
+		//app.use(expressValidator());
 		app.use(server.faviconHandler);
 		app.use(server.domainRestrict);
 		app.use(server.dataLoader);

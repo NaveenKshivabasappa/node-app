@@ -2,17 +2,17 @@ module.exports = {
     "isProduction": false,
     "db":{
     	"mongodb": {
-                "db_name":"test",
+                "db_name":"locationdb",
                 "username":"appUser",
-                "password":"r4iwFNAhh1xx6Cyz",
+                "password":"DbU69W7T4Fa4Uhe",
                 "coll_name":{
                     "user_profile":"user_info"
                 },
                 "servers":[{
-                    "host":"127.0.0.1",
-                    "port":"27017"
+                    "host":"ds125273.mlab.com",
+                    "port":"25273"
                     }],
-                "replica_set":"rs0",
+                "replica_set":"",
                 "db_options": {
                 	"useNewUrlParser":true,
                 	"connectTimeoutMS": 30000

@@ -16,7 +16,11 @@ var MongoDB = function(log) {
 	this.connection_string = this.connection_string.slice(0, -1);
 	this.connection_string += '/';
 
-	this.connection_string += config.db.mongodb.db_name + '?replicaSet=' + config.db.mongodb.replica_set;
+	this.connection_string += config.db.mongodb.db_name
+	if(config.db.mongodb.replica_set != ""){
+		console.log(config);
+		this.connection_string += '?replicaSet=' + config.db.mongodb.replica_set;
+	}
 	if(config.db.mongodb.authSource && config.db.mongodb.authSource!= "" ){
 		this.connection_string += "&authSource="+config.db.mongodb.authSource;
 	}	
@@ -42,7 +46,7 @@ MongoDB.prototype.init = function(callback) {
 
 MongoDB.prototype.fetchItemCollection = function(callback) {
 	// console.log(this.db)
-	var db = this.client.db("test")
+	var db = this.client.db(config.db.mongodb.db_name)
 	return db.collection("item");
 }
 
